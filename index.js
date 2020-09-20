@@ -6,7 +6,7 @@ inquirer
   .prompt([
     {
       type: "input",
-      message: "Welcome to this ReadMe generator application. \nWhat is the title of your project?",
+      message: "Welcome to ReadMe generator application. \nWhat is the title of your project?",
       name: "title"
     },
     {
@@ -33,7 +33,7 @@ inquirer
             "ISC",
             "Apache",
             "BSD"
-        ],
+        ]
       },
     {
       type: "input",
@@ -47,7 +47,7 @@ inquirer
     },
       {
         type: "input",
-        message: "Please provide your GitHub profile URL.",
+        message: "Please provide your GitHub name.",
         name: "github"
       },
       {
@@ -90,8 +90,11 @@ inquirer
 ## License
 
   ${response.license}
+[License Badge](http://img.shields.io/badge/License-${response.license}-blue.svg)
 
-## Contributing
+For information about the License visit this link: [License](https://opensource.org/licenses/${response.license})
+
+## Contribution
 
   ${response.contribution}
 
@@ -100,8 +103,8 @@ inquirer
   ${response.test}
 
 ## Questions
-  In case of any additional questions please visit my GitHub link: ${response.github}
-  Or don't hesitate to contact me via email: ${response.email}
+In case of any additional questions please visit my GitHub link: [GitHublink](https://github.com/${response.github}) 
+Or don't hesitate to contact me via email: ${response.email}
     `
     // function to initialize program
         async function generatMarkdown() {
