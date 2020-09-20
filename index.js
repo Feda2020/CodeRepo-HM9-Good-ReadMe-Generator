@@ -6,50 +6,50 @@ inquirer
   .prompt([
     {
       type: "input",
-      message: "What is the title of your project?",
-      name: "Title"
+      message: "Welcome to this ReadMe generator application. \nWhat is the title of your project?",
+      name: "title"
     },
     {
       type: "input",
-      message: "Write a discription of your project?",
+      message: "Write a discription of your project.",
       name: "description"
     },
     {
       type: "input",
-      message: "Mention the installation instructions of your project.",
-      name: "Installation"
+      message: "Descripe the installation instructions of your project.",
+      name: "installation"
     },
     {
       type: "input",
-      message: "Explaine how the usage of the application.",
+      message: "Explaine the usage of the application.",
       name: "usage"
     },
     {
-        type: "input",
+        type: "list",
         message: "Please select a license",
+        name: "license",
         choices: [
             "NIT",
             "ISC",
             "Apache",
             "BSD"
         ],
-        name: "license"
       },
     {
       type: "input",
       message: "Who contributed to the application?",
       name: "contribution"
-    }
+    },
     {
-        type: "input",
+      type: "input",
         message: "Descripe the test instructions.",
         name: "test"
-      }
+    },
       {
         type: "input",
         message: "Please provide your GitHub profile URL.",
         name: "github"
-      }
+      },
       {
         type: "input",
         message: "Please provide your email.",
@@ -58,55 +58,62 @@ inquirer
   ])
 
 // function to write README file
-function generateMarkdown(answers) {
-    return `
-    ## Title
+.then(function(response) {
 
-    ${answers.title}
+  let readMeToWrite =`
+## Title
 
-    ## Description
+  ${response.title}
 
-    ${answers.description}
+## Description
 
-    ## Table of Contants
+  ${response.description}
 
-        * [Description](#description)
-        * [Installation](#Installation)
-        * [Usage](#usage)
-        * [Licens](#contribution)
-        * [Test](#test)
-        * [Questions](#questions)
+## Table of Contants
 
-    ## Installation
+* [Description](#Description)
+* [Installation](#Installation)
+* [Usage](#Usage)
+* [Licens](#License)
+* [Contributing](Contribution)
+* [Test](#Test)
+* [Questions](#Questions)
 
-    ${answers.Installation}
+## Installation
 
-    ## usage
+  ${response.installation}
 
-    ${answers.usage}
+## Usage
 
-    ## License
+  ${response.usage}
 
-    ${answers.license}
+## License
 
-    ## Contributing
+  ${response.license}
 
-    ${answers.contribution}
+## Contributing
 
-    ## Test
+  ${response.contribution}
 
-    ${answers.description}
+## Test
 
-    ## Questions
-        In case of any additional questions please visit my GitHub link: 
-        Or don't hesitate to contact me via email: 
+  ${response.test}
+
+## Questions
+  In case of any additional questions please visit my GitHub link: ${response.github}
+  Or don't hesitate to contact me via email: ${response.email}
     `
-}
+    // function to initialize program
+        async function generatMarkdown() {
+          try {
+            await writeFileAsync("readme.md", readMeToWrite);
+            console.log(`Success, your ReadMe has been created`)      
+          } catch(err) {
+            console.log(err)
+          }
+        }
+        generatMarkdown();
+    });
 
-// function to initialize program
-function init() {
 
-}
 
-// function call to initialize program
-init();
