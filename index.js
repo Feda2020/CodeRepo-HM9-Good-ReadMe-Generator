@@ -5,17 +5,6 @@ const writeFileAsync = util.promisify(fs.writeFile);
 inquirer
   .prompt([
     {
-        type: "input",
-        message: "Please select a license",
-        choices: [
-            "NIT",
-            "ISC",
-            "Apache",
-            "BSD"
-        ],
-        name: "license"
-      },
-    {
       type: "input",
       message: "What is the title of your project?",
       name: "Title"
@@ -35,6 +24,17 @@ inquirer
       message: "Explaine how the usage of the application.",
       name: "usage"
     },
+    {
+        type: "input",
+        message: "Please select a license",
+        choices: [
+            "NIT",
+            "ISC",
+            "Apache",
+            "BSD"
+        ],
+        name: "license"
+      },
     {
       type: "input",
       message: "Who contributed to the application?",
@@ -60,8 +60,46 @@ inquirer
 // function to write README file
 function generateMarkdown(answers) {
     return `
-    # ${answers.title}
-    
+    ## Title
+
+    ${answers.title}
+
+    ## Description
+
+    ${answers.description}
+
+    ## Table of Contants
+
+        * [Description](#description)
+        * [Installation](#Installation)
+        * [Usage](#usage)
+        * [Licens](#contribution)
+        * [Test](#test)
+        * [Questions](#questions)
+
+    ## Installation
+
+    ${answers.Installation}
+
+    ## usage
+
+    ${answers.usage}
+
+    ## License
+
+    ${answers.license}
+
+    ## Contributing
+
+    ${answers.contribution}
+
+    ## Test
+
+    ${answers.description}
+
+    ## Questions
+        In case of any additional questions please visit my GitHub link: 
+        Or don't hesitate to contact me via email: 
     `
 }
 
