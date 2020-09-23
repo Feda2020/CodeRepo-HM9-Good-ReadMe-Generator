@@ -75,7 +75,7 @@ inquirer
 * [Installation](#Installation)
 * [Usage](#Usage)
 * [Licens](#License)
-* [Contributing](Contribution)
+* [Contributing](#Contribution)
 * [Test](#Test)
 * [Questions](#Questions)
 
@@ -103,7 +103,7 @@ For information about the License visit this link: [License](https://opensource.
   ${response.test}
 
 ## Questions
-In case of any additional questions please visit my GitHub link: [GitHublink](https://github.com/${response.github}) 
+In case of any additional questions please visit my GitHub link: [Feda2020](https://github.com/${response.github}) 
 Or don't hesitate to contact me via email: ${response.email}
     `
     // function to initialize program

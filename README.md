@@ -27,10 +27,10 @@
 
 ## License
 
-  ISC
-[License Badge](http://img.shields.io/badge/License-ISC-blue.svg)
+  NIT
+[License Badge](http://img.shields.io/badge/License-NIT-blue.svg)
 
-For information about the License visit this link: [License](https://opensource.org/licenses/ISC)
+For information about the License visit this link: [License](https://opensource.org/licenses/NIT)
 
 ## Contribution
 
@@ -41,6 +41,6 @@ For information about the License visit this link: [License](https://opensource.
   This application allows the user just by answering few questions to create a good ReadMe files.
 
 ## Questions
-In case of any additional questions please visit my GitHub link: [GitHublink](https://github.com/feda2020) 
+In case of any additional questions please visit my GitHub link: [Feda2020](https://github.com/feda2020) 
 Or don't hesitate to contact me via email: fido311@gmail.com
     
